@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/fragmentSearch"
-        android:name="com.work.dictionarry.MainSearchFragment"
+        android:name="com.work.dictionarry.presentation.search.MainSearchFragment"
         android:label="SearchFragment"
-        tools:layout="@layout/fragment_main_search" >
+        tools:layout="@layout/fragment_main_search">
 
         <action
             android:id="@+id/search_fragment_action"
@@ -22,7 +22,13 @@
 
     <fragment
         android:id="@+id/fragmentInfo"
-        android:name="com.work.dictionarry.WordInfoFragment"
+        android:name="com.work.dictionarry.presentation.WordInfoFragment"
         android:label="InfoFragment"
-        tools:layout="@layout/fragment_word_info" />
+        tools:layout="@layout/fragment_word_info">
+
+        <argument
+            android:name="word"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
 </navigation>

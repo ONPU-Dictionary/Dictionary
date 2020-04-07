@@ -2,4 +2,6 @@
     <string name="app_name">Dictionary</string>
     <string name="search_title">Find word</string>
     <string name="find_word">Find word</string>
+    <string name="pronunciation">Pronunciation: [%s]</string>
+    <string name="syllables">Syllables: "%s"</string>
 </resources>
