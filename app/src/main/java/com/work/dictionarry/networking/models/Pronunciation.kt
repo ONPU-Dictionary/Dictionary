@@ -1,4 +1,4 @@
-package com.work.dictionarry.networking
+package com.work.dictionarry.networking.models
 
 import com.google.gson.annotations.SerializedName
 

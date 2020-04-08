@@ -22,9 +22,17 @@
 
     <fragment
         android:id="@+id/fragmentInfo"
-        android:name="com.work.dictionarry.presentation.WordInfoFragment"
+        android:name="com.work.dictionarry.presentation.info.WordInfoFragment"
         android:label="InfoFragment"
         tools:layout="@layout/fragment_word_info">
+
+        <action
+            android:id="@+id/find_fragment_action"
+            app:destination="@id/fragmentInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
 
         <argument
             android:name="word"

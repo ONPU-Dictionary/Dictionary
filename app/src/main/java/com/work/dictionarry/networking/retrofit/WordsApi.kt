@@ -1,6 +1,6 @@
 package com.work.dictionarry.networking.retrofit
 
-import com.work.dictionarry.networking.Word
+import com.work.dictionarry.networking.models.Word
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

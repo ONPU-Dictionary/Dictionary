@@ -1,6 +1,6 @@
 package com.work.dictionarry.repository
 
-import com.work.dictionarry.networking.Word
+import com.work.dictionarry.networking.models.Word
 
 interface WordsRepository {
 

@@ -45,10 +45,17 @@ class MainSearchFragment : Fragment(R.layout.fragment_main_search), SearchView.O
 
     private fun handleLoadingProgress(progress: SearchViewModel.DataLoadingProgress) {
         when (progress) {
-            is SearchViewModel.DataLoadingProgress.Loading -> toggleLoadingView(true)
-            is SearchViewModel.DataLoadingProgress.Error -> toggleLoadingView(false)
+            is SearchViewModel.DataLoadingProgress.Loading -> {
+                toggleLoadingView(true)
+                emptyView.isVisible = false
+            }
+            is SearchViewModel.DataLoadingProgress.Error -> {
+                toggleLoadingView(false)
+                emptyView.isVisible = true
+            }
             is SearchViewModel.DataLoadingProgress.Loaded -> {
                 toggleLoadingView(false)
+                emptyView.isVisible = false
                 (wordsList.adapter as ListAdapter).setData(progress.words)
             }
         }

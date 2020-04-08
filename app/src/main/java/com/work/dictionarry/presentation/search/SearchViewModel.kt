@@ -4,13 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.work.dictionarry.networking.Word
+import com.work.dictionarry.networking.models.Word
 import com.work.dictionarry.networking.retrofit.NetworkService
 import com.work.dictionarry.repository.WordsRepository
 import com.work.dictionarry.repository.WordsRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.lang.Error
 
 class SearchViewModel() : ViewModel() {
 

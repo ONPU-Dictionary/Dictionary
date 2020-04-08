@@ -1,6 +1,5 @@
-package com.work.dictionarry.networking
+package com.work.dictionarry.networking.models
 
-import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class Word(

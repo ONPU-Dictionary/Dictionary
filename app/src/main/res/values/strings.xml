@@ -4,4 +4,8 @@
     <string name="find_word">Find word</string>
     <string name="pronunciation">Pronunciation: [%s]</string>
     <string name="syllables">Syllables: "%s"</string>
+    <string name="get_synonyms">Get synonyms</string>
+    <string name="get_rhymes">Get rhymes</string>
+    <string name="word_info">Word info</string>
+    <string name="definitions">Definitions:</string>
 </resources>
