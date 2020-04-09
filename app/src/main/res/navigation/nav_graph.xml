@@ -27,6 +27,14 @@
         tools:layout="@layout/fragment_word_info">
 
         <action
+            android:id="@+id/additions_fragment_action"
+            app:destination="@id/fragmentAdditions"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
             android:id="@+id/find_fragment_action"
             app:destination="@id/fragmentInfo"
             app:enterAnim="@anim/slide_in_right"
@@ -37,6 +45,23 @@
         <argument
             android:name="word"
             app:argType="string"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentAdditions"
+        android:name="com.work.dictionarry.presentation.addition.WordAdditionsFragment"
+        android:label="AdditionFragment"
+        tools:layout="@layout/fragment_word_addition">
+
+        <argument
+            android:name="word"
+            app:argType="string"
+            app:nullable="false" />
+
+        <argument
+            android:name="type"
+            app:argType="com.work.dictionarry.presentation.WordAdditionsFragment.AdditionType"
             app:nullable="false" />
     </fragment>
 </navigation>

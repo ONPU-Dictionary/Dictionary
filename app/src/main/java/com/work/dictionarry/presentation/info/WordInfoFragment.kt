@@ -11,6 +11,7 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.work.dictionarry.R
 import com.work.dictionarry.networking.models.Word
+import com.work.dictionarry.presentation.addition.WordAdditionsFragment
 import kotlinx.android.synthetic.main.fragment_word_info.*
 
 class WordInfoFragment: Fragment(R.layout.fragment_word_info) {
@@ -18,13 +19,19 @@ class WordInfoFragment: Fragment(R.layout.fragment_word_info) {
     private val viewModel: InfoViewModel by lazy { ViewModelProvider(viewModelStore, ViewModelProvider.NewInstanceFactory())[InfoViewModel::class.java] }
     private val args by navArgs<WordInfoFragmentArgs>()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        viewModel.getWordInfo(args.word)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
         definitionsList.layoutManager = LinearLayoutManager(requireContext())
         definitionsList.adapter = DefinitionsListAdapter(this::onDefinitionClicked)
         viewModel.loadingState.observe(viewLifecycleOwner, Observer(::handleLoadingStater))
-        viewModel.getWordInfo(args.word)
+        rhymes.setOnClickListener { findNavController().navigate(WordInfoFragmentDirections.additionsFragmentAction(args.word, WordAdditionsFragment.AdditionType.RHYMES)) }
+        synonyms.setOnClickListener { findNavController().navigate(WordInfoFragmentDirections.additionsFragmentAction(args.word, WordAdditionsFragment.AdditionType.SYNONYM)) }
     }
 
     private fun onDefinitionClicked(word: String) {
