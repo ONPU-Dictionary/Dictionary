@@ -4,10 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.work.dictionarry.networking.models.Word
-import com.work.dictionarry.networking.retrofit.NetworkService
-import com.work.dictionarry.repository.WordsRepository
-import com.work.dictionarry.repository.WordsRepositoryImpl
+import com.work.dictionarry.model.networking.models.Word
+import com.work.dictionarry.model.networking.retrofit.NetworkService
+import com.work.dictionarry.model.repository.WordsRepository
+import com.work.dictionarry.model.repository.WordsRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
@@ -20,7 +20,8 @@ class SearchViewModel() : ViewModel() {
 
     init {
         val wordsApi = NetworkService.instance().wordsApi
-        wordsRepository = WordsRepositoryImpl(wordsApi)
+        wordsRepository =
+            WordsRepositoryImpl(wordsApi)
     }
 
     fun findWord(word: String) {

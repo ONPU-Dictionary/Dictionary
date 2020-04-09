@@ -1,4 +1,4 @@
-package com.work.dictionarry.networking.retrofit
+package com.work.dictionarry.model.networking.retrofit
 
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient

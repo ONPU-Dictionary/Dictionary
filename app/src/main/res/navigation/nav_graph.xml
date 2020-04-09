@@ -34,14 +34,6 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right" />
 
-        <action
-            android:id="@+id/find_fragment_action"
-            app:destination="@id/fragmentInfo"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right" />
-
         <argument
             android:name="word"
             app:argType="string"
@@ -61,7 +53,16 @@
 
         <argument
             android:name="type"
-            app:argType="com.work.dictionarry.presentation.WordAdditionsFragment.AdditionType"
+            app:argType="integer"
             app:nullable="false" />
+
+        <action
+            android:id="@+id/addition_fragment_action"
+            app:popUpTo="@id/fragmentSearch"
+            app:destination="@id/fragmentInfo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 </navigation>

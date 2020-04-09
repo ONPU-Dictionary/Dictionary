@@ -8,4 +8,7 @@
     <string name="get_rhymes">Get rhymes</string>
     <string name="word_info">Word info</string>
     <string name="definitions">Definitions:</string>
+    <string name="synonyms">Synonyms</string>
+    <string name="rhymes">Rhymes</string>
+    <string name="addition_of">%s of:</string>
 </resources>

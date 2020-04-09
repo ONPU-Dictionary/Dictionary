@@ -30,6 +30,18 @@
             <LayoutPositions>
               <option name="myPositions">
                 <map>
+                  <entry key="fragmentAdditions">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="12" />
+                            <option name="y" value="12" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="fragmentInfo">
                     <value>
                       <LayoutPositions>
@@ -41,6 +53,11 @@
                         </option>
                         <option name="myPositions">
                           <map>
+                            <entry key="additions_fragment_action">
+                              <value>
+                                <LayoutPositions />
+                              </value>
+                            </entry>
                             <entry key="find_fragment_action">
                               <value>
                                 <LayoutPositions />

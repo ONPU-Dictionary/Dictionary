@@ -5,7 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.work.dictionarry.R
-import com.work.dictionarry.networking.models.Word
+import com.work.dictionarry.model.networking.models.Word
 import kotlinx.android.synthetic.main.item_word.view.*
 
 class ListAdapter(private val onWordClicked: (word: String) -> Unit): RecyclerView.Adapter<ListAdapter.ViewHolder>() {

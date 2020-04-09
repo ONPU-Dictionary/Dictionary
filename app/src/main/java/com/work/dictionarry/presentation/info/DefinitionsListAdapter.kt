@@ -5,10 +5,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.work.dictionarry.R
-import com.work.dictionarry.networking.models.Meaning
+import com.work.dictionarry.model.networking.models.Meaning
 import kotlinx.android.synthetic.main.item_definition.view.*
 
-class DefinitionsListAdapter(private val onDefinitionClicked: (word: String) -> Unit): RecyclerView.Adapter<DefinitionsListAdapter.ViewHolder>() {
+class DefinitionsListAdapter : RecyclerView.Adapter<DefinitionsListAdapter.ViewHolder>() {
 
     private val definitions = mutableListOf<Meaning>()
 
