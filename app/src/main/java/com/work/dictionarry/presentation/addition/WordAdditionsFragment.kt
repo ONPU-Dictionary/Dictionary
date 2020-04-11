@@ -32,9 +32,8 @@ class WordAdditionsFragment : Fragment(R.layout.fragment_word_addition) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        initToolbar()
         word.text = args.word
-        toolbar.title = getString(AdditionType.values()[args.type].readableName)
         additionsList.layoutManager = LinearLayoutManager(requireContext())
         additionsList.adapter = AdditionsListAdapter(this::onAdditionClicked)
         viewModel.loadingState.observe(viewLifecycleOwner, Observer {
@@ -47,6 +46,16 @@ class WordAdditionsFragment : Fragment(R.layout.fragment_word_addition) {
                 }
             }
         })
+    }
+
+    private fun initToolbar() {
+        toolbar.setNavigationOnClickListener { findNavController().popBackStack() }
+        val additionType = AdditionType.values()[args.type]
+        toolbar.title = getString(additionType.readableName)
+        when(additionType) {
+            AdditionType.SYNONYM -> additionTv.text = getString(R.string.synonymsTv)
+            AdditionType.RHYMES -> additionTv.text = getString(R.string.rhymesTv)
+        }
     }
 
     private fun onAdditionClicked(word: String) {

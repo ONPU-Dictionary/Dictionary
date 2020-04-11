@@ -16,8 +16,8 @@
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
-        android:visibility="gone"
-        app:constraint_referenced_ids="word,additionsList"
+        android:visibility="visible"
+        app:constraint_referenced_ids="wordTv,additionTv,word,additionsList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
@@ -32,20 +32,41 @@
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
+        android:id="@+id/wordTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        android:text="@string/your_word" />
+
+    <TextView
         android:id="@+id/word"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:textColor="@color/black"
         android:textSize="26sp"
+        app:layout_constraintTop_toBottomOf="@id/wordTv"
+        tools:text="word" />
+
+    <TextView
+        android:id="@+id/additionTv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="parent"
-        tools:text="addition off" />
+        app:layout_constraintTop_toBottomOf="@id/word"
+        android:text="@string/your_word" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/additionsList"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/word" />
+        app:layout_constraintTop_toBottomOf="@id/additionTv" />
 </androidx.constraintlayout.widget.ConstraintLayout>
