@@ -6,7 +6,9 @@ import okhttp3.Request
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class NetworkService private constructor() {
+object NetworkService {
+
+    private const val BASE_URL = "https://wordsapiv1.p.rapidapi.com/"
 
     private val client: OkHttpClient by lazy {
         OkHttpClient.Builder()
@@ -29,23 +31,11 @@ class NetworkService private constructor() {
             .build()
     }
 
-    private val retrofit: Retrofit by lazy {
+    val retrofit: Retrofit by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
-    }
-
-    val wordsApi: WordsApi = retrofit.create(WordsApi::class.java)
-
-    companion object {
-        private const val BASE_URL = "https://wordsapiv1.p.rapidapi.com/"
-        private var instance: NetworkService? = null
-
-        fun instance(): NetworkService {
-            return instance
-                ?: NetworkService()
-        }
     }
 }

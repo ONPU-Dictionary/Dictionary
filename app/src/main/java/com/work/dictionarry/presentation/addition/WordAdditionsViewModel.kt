@@ -3,22 +3,26 @@ package com.work.dictionarry.presentation.addition
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.work.dictionarry.dagger.ComponentHolder
 import com.work.dictionarry.model.networking.models.Addition
 import com.work.dictionarry.model.networking.models.Word
 import com.work.dictionarry.model.networking.retrofit.NetworkService
+import com.work.dictionarry.model.networking.retrofit.WordsApi
 import com.work.dictionarry.model.repository.WordsRepository
 import com.work.dictionarry.model.repository.WordsRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class WordAdditionsViewModel : ViewModel() {
+class WordAdditionsViewModel: ViewModel() {
 
     val loadingState: MutableLiveData<LoadingState> = MutableLiveData()
-    private val wordsRepository: WordsRepository
+
+    @Inject
+    lateinit var wordsRepository: WordsRepository
 
     init {
-        val wordsApi = NetworkService.instance().wordsApi
-        wordsRepository = WordsRepositoryImpl(wordsApi)
+        ComponentHolder.getApplicationComponent().inject(this)
     }
 
     fun findRhymes(word: String) {

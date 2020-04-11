@@ -11,8 +11,9 @@ import retrofit2.Response
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 import com.work.dictionarry.model.repository.WordsRepository.ResponseState
+import javax.inject.Inject
 
-class WordsRepositoryImpl(private val wordsApi: WordsApi) :
+class WordsRepositoryImpl @Inject constructor(private val wordsApi: WordsApi) :
     WordsRepository {
 
     override suspend fun findWord(word: String): ResponseState = suspendCoroutine {

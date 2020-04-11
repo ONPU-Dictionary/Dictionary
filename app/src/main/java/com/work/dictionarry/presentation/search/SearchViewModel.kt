@@ -4,24 +4,26 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.work.dictionarry.dagger.ComponentHolder
 import com.work.dictionarry.model.networking.models.Word
 import com.work.dictionarry.model.networking.retrofit.NetworkService
 import com.work.dictionarry.model.repository.WordsRepository
 import com.work.dictionarry.model.repository.WordsRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class SearchViewModel() : ViewModel() {
+class SearchViewModel: ViewModel() {
 
     private val _wordLd: MutableLiveData<DataLoadingProgress> = MutableLiveData()
     val wordLd: LiveData<DataLoadingProgress> = _wordLd
 
-    var wordsRepository: WordsRepository
+    @Inject
+    lateinit var wordsRepository: WordsRepository
+
 
     init {
-        val wordsApi = NetworkService.instance().wordsApi
-        wordsRepository =
-            WordsRepositoryImpl(wordsApi)
+        ComponentHolder.getApplicationComponent().inject(this)
     }
 
     fun findWord(word: String) {
