@@ -10,9 +10,9 @@ import kotlinx.android.synthetic.main.item_definition.view.*
 
 class DefinitionsListAdapter : RecyclerView.Adapter<DefinitionsListAdapter.ViewHolder>() {
 
-    private val definitions = mutableListOf<Meaning>()
+    private val definitions = mutableListOf<String>()
 
-    fun setDefinitions(list: List<Meaning>) {
+    fun setDefinitions(list: List<String>) {
         definitions.clear()
         definitions.addAll(list)
         notifyDataSetChanged()
@@ -27,7 +27,7 @@ class DefinitionsListAdapter : RecyclerView.Adapter<DefinitionsListAdapter.ViewH
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder.itemView) {
             definitionNumber.text = (position+1).toString()
-            definitionWord.text = definitions[position].definition
+            definitionWord.text = definitions[position]
         }
     }
 

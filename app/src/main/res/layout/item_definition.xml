@@ -8,11 +8,11 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/stroked_rectangle">
+        android:background="@color/white">
 
         <TextView
             android:id="@+id/definitionNumber"
-            android:layout_width="24dp"
+            android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginStart="10dp"
             android:gravity="center"

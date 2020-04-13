@@ -14,4 +14,6 @@
     <string name="rhymesTv">Rhymes:</string>
     <string name="addition_of">%s of:</string>
     <string name="your_word">Your word:</string>
+    <string name="urban_dictionary">Urban dictionary</string>
+    <string name="words_api">Words API</string>
 </resources>

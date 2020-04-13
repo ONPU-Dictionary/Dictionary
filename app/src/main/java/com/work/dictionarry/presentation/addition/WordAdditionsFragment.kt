@@ -10,11 +10,13 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.work.dictionarry.R
+import com.work.dictionarry.presentation.info.InfoViewModel
 import kotlinx.android.synthetic.main.fragment_word_addition.*
 
 class WordAdditionsFragment : Fragment(R.layout.fragment_word_addition) {
 
     private val args: WordAdditionsFragmentArgs by navArgs()
+
     private val viewModel: WordAdditionsViewModel by lazy {
         ViewModelProvider(
             viewModelStore,
@@ -59,7 +61,7 @@ class WordAdditionsFragment : Fragment(R.layout.fragment_word_addition) {
     }
 
     private fun onAdditionClicked(word: String) {
-        findNavController().navigate(WordAdditionsFragmentDirections.additionFragmentAction(word))
+        findNavController().navigate(WordAdditionsFragmentDirections.additionFragmentAction(word, InfoViewModel.ApiType.WORD_API.ordinal))
     }
 
     private fun toggleLoadingView(isLoading: Boolean) {
